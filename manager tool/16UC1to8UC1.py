@@ -14,8 +14,7 @@ d1 = datetime.datetime.now()
 ##############################
 
 
-
-filepath="F:/tf/zmap/p3/u16/"
+filepath="F:/tf/zmap/p3/u16/" #input 16uc1 path
 filepathto=filepath[:-1]+"u8/"
 
 if(os.path.exists(filepathto)==False):
@@ -39,12 +38,6 @@ for allDir in pathDir:
 
     
     print(allDir)
-
-
-
-##imagepath="F:/tf/zmap/p3/u16/2019-3-20 13-56-46.dt.PNG"
-##imagepathto="F:/tf/zmap/p3/u16/a.dt.PNG"
-
 
 
 ###############################    
