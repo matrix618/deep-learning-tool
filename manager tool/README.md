@@ -4,7 +4,7 @@ use opencv-python change picture type. 16uc1 change 8uc1.
 
 2.changename.py
 
-change dir path name
+change dir path name.
 
 3.high2low.py
 
