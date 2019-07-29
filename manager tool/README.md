@@ -9,3 +9,9 @@ change dir path name.
 3.high2low.py
 
 labelImg xml high change to low,picture size the same.
+
+4.nvi5.py
+
+5 second run cmd NVSMI.look GPU info.
+
+
