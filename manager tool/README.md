@@ -14,4 +14,6 @@ labelImg xml high change to low,picture size the same.
 
 10 second run cmd NVSMI.look GPU info.
 
+5.stat_xml.py statistcs_xml.py
 
+statistics two xml difference.imgtopology.py cal two rectangle lap rate.
