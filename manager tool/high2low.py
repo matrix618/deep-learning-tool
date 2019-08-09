@@ -11,7 +11,7 @@ import shutil
 d1 = datetime.datetime.now()
 ##############################
 
-filepath="D:/ftp/CVIS_SW_IREC/picture/2019-07-24-BGV5000/bgp_png_V5000/"
+filepath="D:/ftp/CVIS_SW_IREC/picture/2019-05-06-BGV5000/bgp_png_V5000/"
 
 i=0
 

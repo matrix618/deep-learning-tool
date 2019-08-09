@@ -53,19 +53,23 @@ d1 = datetime.datetime.now()
 filepath="D:/ftp/CVIS_SW_IREC/picture/2019-07-19-BGV5000/bgp_png_V5000/"
 filepath1="D:/ftp/CVIS_SW_IREC/picture/2019-07-19-BGV5000/bgp_png_V5000_1/"
 
-#stype="bottle"
-stype="smoke"
+stype="bottle"
+#stype="smoke"
 
 i=0
 
 isum=0
+isum2=0
 isum_=0
 
 false_alarm1=0
 missed1=0
 
-false_alarm2=0
-missed2=0
+false_alarm1_=0
+missed1_=0
+
+#false_alarm2=0
+#missed2=0
 
 #miss_
 
@@ -74,22 +78,14 @@ for allDir in pathDir:
     if(allDir[:4]!="high"):continue
     if(allDir[-3:]!="xml"):continue
 
+    isum_=isum_+1
+    
     icon1=0
     icon2=0
 
     icon1_1=0
     icon2_1=0
 
-#    with open(filepath+allDir) as opentext:
-#        for line in opentext.readlines():
-#            if(line.find("<name>bottle")>-1):icon1=icon1+1
-#            if(line.find("<name>smoke")>-1):icon2=icon2+1
-#
-#    with open(filepath1+allDir) as opentext:
-#        for line in opentext.readlines():
-#            if(line.find("<name>bottle")>-1):icon1_1=icon1_1+1
-#            if(line.find("<name>smoke")>-1):icon2_1=icon2_1+1
-    
     list1,list2=[],[]
 
     with open(filepath+allDir) as opentext:
@@ -102,6 +98,8 @@ for allDir in pathDir:
 
     #print(list1)
     #print(list2)
+
+    itemp=0
 
     for element1 in list1:
 
@@ -122,13 +120,18 @@ for allDir in pathDir:
 
         if iele<0.2:
             missed1=missed1+1
+            
+            if itemp==0:
+                itemp=1
+                missed1_=missed1_+1
+            
             print(allDir)
 
-
+    itemp=0
     for element2 in list2:
 
         if element2[0] != stype:continue
-        isum_=isum_+1
+        isum2=isum2+1
 
         iele=0
         for element1 in list1:
@@ -143,19 +146,28 @@ for allDir in pathDir:
 
         if iele<0.2:
             false_alarm1=false_alarm1+1
+            
+            if itemp==0:
+                itemp=1
+                false_alarm1_=false_alarm1_+1
+            
             print(allDir)
 
     #break
 
 print(missed1)
 print(false_alarm1)
-
 print(isum)
-#print(isum_)
-
 print("missed rate:"+ str(missed1/isum))
 print("false rate:"+ str(false_alarm1/isum)+"(right rate:"+ str(1-false_alarm1/isum)+")")
 
+#print(isum)
+
+print(missed1_)
+print(false_alarm1_)
+print(isum_)
+print("missed rate:"+ str(missed1_/isum_))
+print("false rate:"+ str(false_alarm1_/isum_)+"(right rate:"+ str(1-false_alarm1_/isum_)+")")
 
 #i=imgtopology.rectangle_lap(100,300,200,400,100,50,200,350)
 
