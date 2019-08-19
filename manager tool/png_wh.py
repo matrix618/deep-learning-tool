@@ -14,15 +14,10 @@ from PIL import Image
 d1 = datetime.datetime.now()
 ##############################
 
-filepath="F:/tf/zmap/p10/temp2/"
+filepath="F:/tf/zmap/p10/temp1/"
 
 
 i=0
-
-##pathDir =  os.listdir(filepathto)
-##for allDir in pathDir:
-##    child = os.path.join('%s%s' % (filepathto, allDir))
-##    os.remove(child)
 
 iw=[]
 ih=[]
@@ -43,23 +38,18 @@ for allDir in pathDir:
     ih.append(im_height)
 
 
-print(iw)
-print(ih)
+aw=np.asarray(iw)
+ah=np.asarray(ih)
+
+print(aw)
+print(ah)
 
 
+print("meanw:"+str(np.mean(aw)))
+print("meanh:"+str(np.mean(ah)))
 
-    
-##    with open(filepath+allDir1,"w") as texta0:texta0.write("")
-##
-##    with open(filepath+allDir) as opentext:
-##        for line in opentext.readlines():  
-##            with open(filepath+allDir1,"a") as texta:
-##                line=line.replace("high","low")
-##                texta.write(line)  
-
-   
-print(i)
-
+print("stdw:"+str(np.std(aw)))
+print("stdw:"+str(np.std(ah)))
 
 ###############################    
 d2 = datetime.datetime.now()
