@@ -7,13 +7,17 @@ use opencv-python change picture type. 16uc1 change 8uc1.
 change dir path name.
 
 3.high2low.py
-
+-------
 labelImg xml high change to low,picture size the same.
 
 4.nvi5.py
-
+-------
 10 second run cmd NVSMI.look GPU info.
 
 5.stat_xml.py statistcs_xml.py
-
+-------
 statistics two xml difference.imgtopology.py cal two rectangle lap rate.
+
+6.png_wh.py 
+-------
+Statistical picture width and height information.include mean and std.
